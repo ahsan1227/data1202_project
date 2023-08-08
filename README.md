@@ -64,4 +64,16 @@ order by no_products_sold asc
 limit 5;
 ```
 
+*******************************  Most Loyal Customers  ********************************
+```sql
+Create view most_loyal_customers as 
+Select o.`customer ID`,c.`Customer name`,c.`country`,c.`city`, count(o.`Customer ID`) as orders_placed
+from customer_table as c 
+JOIN orders_table as o 
+on c.`customer ID` = o.`customer ID`
+group by c.`Customer Name`,c.`Customer ID`, c.`customer name`, c.`country`,c.`city`
+order by orders_placed desc;
+```
+
+
 
