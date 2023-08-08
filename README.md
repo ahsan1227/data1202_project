@@ -29,5 +29,19 @@ where  Sales is NULL ;
 ```
 
 
+******************************** Products generating most sales ********************
+```sql
+
+Create view Products_with_most_sales_amount as 
+SELECT p.`Product Name`,p.`product id`,Sum(Sales) as Total_Sales 
+FROM sales_analysis_1202.orders_table as o
+join sales_analysis_1202.product_table p on o.`Product ID` = p.`Product ID`
+group by `product name`,`Product ID`
+order by Total_Sales desc
+Limit 10 ;
+
+```
+
+
 
 
