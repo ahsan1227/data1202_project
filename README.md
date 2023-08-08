@@ -42,6 +42,14 @@ Limit 10 ;
 
 ```
 
-
-
+********************************  Most popular products  ***************************
+```sql
+Create view Hot_Selling_Products as 
+SELECT p.`Product Name`,p.`product id`, Sum(Sales) as Total_Sales ,count(o.`Product ID`) as no_products_sold
+FROM sales_analysis_1202.orders_table as o
+join sales_analysis_1202.product_table p on o.`Product ID` = p.`Product ID`
+group by `product name`,`Product ID`
+order by no_products_sold desc
+limit 10;
+```
 
