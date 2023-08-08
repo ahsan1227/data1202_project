@@ -75,5 +75,15 @@ group by c.`Customer Name`,c.`Customer ID`, c.`customer name`, c.`country`,c.`ci
 order by orders_placed desc;
 ```
 
+*******************************  Top 3 Cities generating most orders *******************
+``` sql
+Create view Top_3_Cities as 
+Select city,count(city) as order_placed_from_city
+from orders_table as o 
+inner join customer_table as  c
+on o.`Customer ID` = c.`Customer ID` 
+group by city
+order by order_placed_from_city desc 
+limit 5;
 
-
+```
