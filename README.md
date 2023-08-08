@@ -87,3 +87,8 @@ order by order_placed_from_city desc
 limit 5;
 
 ```
+
+
+*********************** Business Analysis ****************************
+
+The purpose of this project is to do sales analysis and identify potential opportunities and removing the products and markets which are not doing well. These SQL view are then loaded  into POWER BI where an executive dashboard can be made.
